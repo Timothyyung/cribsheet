@@ -26,3 +26,16 @@ In general most wifi cards can enter monitor mode. Monitor mode is when you chan
 4) cracking the packet
   aircrack-ng -a2 -b [BSSID] -w [POSSIBLE_PASSWORDS_FILE.TXT] [PATH_TO_WPA_HANDSHAKE_FILES*.cap]
   
+## Man in the middle ARP Spoofing
+
+### Requirements
+Kali linux installation
+Wirefless adapter that can enter monitor mode
+
+## Steps
+  1) Arpspoof: tells the client that we are now the serever
+  2) Arpspoof: tell the server that they are a client by swaping mac addresses
+  3) ip_forward: All the packets we recieve from the "client" we will echo it and forward it to the server
+  4) dsniff: Grabs credentials from the packets
+  
+  
